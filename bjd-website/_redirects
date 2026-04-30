@@ -1,0 +1,23 @@
+# =============================================================
+# Black Jett Development, LLC
+# Cloudflare Pages / Netlify redirects
+# =============================================================
+
+# Block internal documentation files from public access.
+# These return 404 even though the files are in the deploy bundle.
+/README.md       /404.html    404
+/README          /404.html    404
+/readme          /404.html    404
+/_headers        /404.html    404
+/_redirects      /404.html    404
+
+# Canonicalize legacy flat URLs → directory-style (301 permanent).
+# Only relevant if anything ever linked to the old paths externally.
+/about.html              /about/                 301
+/spec-homes.html         /spec-homes/            301
+/small-multifamily.html  /small-multifamily/     301
+/acquisitions.html       /acquisitions/          301
+/contact.html            /contact/               301
+
+# Catch-all 404 — must be last
+/*    /404.html    404
