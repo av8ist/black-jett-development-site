@@ -154,4 +154,4 @@ All three are SIL Open Font License (OFL); license texts are in `assets/fonts/li
 
 `info@blackjettdev.com`
 
-Administrative office: 14401 Issaquah-Hobart Rd SE, Suite 205E, Issaquah, WA 98027 (by appointment)
+14401 Issaquah-Hobart Rd SE, Suite 205E, Issaquah, WA 98027
