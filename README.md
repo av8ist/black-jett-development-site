@@ -61,7 +61,7 @@ The site is currently photo-free by design — the blueprint backgrounds carry t
 - **Pixabay** (pixabay.com) — older library but completely free.
 
 **Recommended placement spots:**
-- Home page, between "Areas of Expertise" and "Development Lens" — a single wide hero image
+- Home page, between "What We Do" and "Development Criteria" — a single wide hero image
 - Spec Homes page, after the "Disciplined execution" intro — a 2-column gallery of finished homes
 - Multifamily page, between the intro and "Practical Infrastructure" feature panel — a building exterior shot
 - Acquisitions page, alongside "Identifying value through practical analysis" — an aerial site shot
@@ -184,10 +184,11 @@ All three are SIL Open Font License (OFL); license texts are in `assets/fonts/li
 
 ## Copy / positioning rules (locked)
 
-- **Brand**: Black Jett Development, LLC
-- **Tone**: lender-facing, restrained, practical
-- **Focus areas**: Spec homes · Small multifamily (5–20 units) · Acquisitions
-- **Do not use**: wholesaling language, public investment-solicitation language, customer-builder pitch language, fake forms
+- **Brand**: Black Jett Development, LLC (always full legal name; no split treatment)
+- **Tone**: lender-facing, restrained, practical, direct
+- **Focus areas**: Spec homes · Small to medium multifamily · Acquisitions
+- **Geography**: select markets (no region-specific operating-limit framing)
+- **Excluded categories**: investment-solicitation language; lead-capture filler; collective-staff language; speculative-buyer terminology; fake or non-functional forms
 - **Contact model**: direct inquiries via mailto links — no form submission backend on the public site
 
 ---
