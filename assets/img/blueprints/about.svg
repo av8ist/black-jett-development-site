@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Architectural section detail blueprint">
+  <defs>
+    <pattern id="grid-fine-d" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+    </pattern>
+    <pattern id="grid-coarse-d" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="0.7"/>
+    </pattern>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#0d2645"/>
+  <rect width="1600" height="1000" fill="url(#grid-fine-d)"/>
+  <rect width="1600" height="1000" fill="url(#grid-coarse-d)"/>
+
+  <!-- Title block -->
+  <g stroke="rgba(255,255,255,0.45)" stroke-width="1" fill="none">
+    <rect x="1240" y="40" width="320" height="120"/>
+    <line x1="1240" y1="80" x2="1560" y2="80"/>
+    <line x1="1240" y1="120" x2="1560" y2="120"/>
+    <line x1="1380" y1="80" x2="1380" y2="160"/>
+  </g>
+  <text x="1255" y="65" fill="rgba(255,255,255,0.55)" font-family="monospace" font-size="14" letter-spacing="2">BJD-DT-004</text>
+  <text x="1255" y="105" fill="rgba(255,255,255,0.35)" font-family="monospace" font-size="11" letter-spacing="1">WALL SECTION</text>
+  <text x="1255" y="142" fill="rgba(255,255,255,0.35)" font-family="monospace" font-size="10">SCALE 1"=1'</text>
+  <text x="1395" y="142" fill="rgba(255,255,255,0.35)" font-family="monospace" font-size="10">SHEET A-5</text>
+
+  <!-- Wall section detail -->
+  <g transform="translate(420, 140)" stroke="rgba(255,255,255,0.7)" stroke-width="2" fill="none">
+    <!-- Roof structure -->
+    <path d="M 0 100 L 380 0 L 760 100"/>
+    <path d="M 30 95 L 380 11 L 730 95" stroke="rgba(255,255,255,0.5)"/>
+    <!-- Roof sheathing hatch -->
+    <path d="M 0 100 L 380 0 L 760 100 L 730 95 L 380 11 L 30 95 Z" fill="url(#hatch)" stroke="none"/>
+
+    <!-- Top plate / ceiling -->
+    <line x1="50" y1="120" x2="710" y2="120"/>
+    <line x1="50" y1="135" x2="710" y2="135"/>
+
+    <!-- Wall outer face -->
+    <line x1="60" y1="135" x2="60" y2="600"/>
+    <!-- Wall inner face -->
+    <line x1="100" y1="135" x2="100" y2="600"/>
+    <!-- Right wall outer/inner -->
+    <line x1="700" y1="135" x2="700" y2="600"/>
+    <line x1="660" y1="135" x2="660" y2="600"/>
+
+    <!-- Wall stud framing -->
+    <g stroke="rgba(255,255,255,0.4)" stroke-width="1">
+      <line x1="60" y1="180" x2="100" y2="180"/>
+      <line x1="60" y1="240" x2="100" y2="240"/>
+      <line x1="60" y1="300" x2="100" y2="300"/>
+      <line x1="60" y1="360" x2="100" y2="360"/>
+      <line x1="60" y1="420" x2="100" y2="420"/>
+      <line x1="60" y1="480" x2="100" y2="480"/>
+      <line x1="660" y1="180" x2="700" y2="180"/>
+      <line x1="660" y1="240" x2="700" y2="240"/>
+      <line x1="660" y1="300" x2="700" y2="300"/>
+      <line x1="660" y1="360" x2="700" y2="360"/>
+      <line x1="660" y1="420" x2="700" y2="420"/>
+      <line x1="660" y1="480" x2="700" y2="480"/>
+    </g>
+
+    <!-- Floor line -->
+    <line x1="100" y1="540" x2="660" y2="540"/>
+    <line x1="100" y1="555" x2="660" y2="555"/>
+
+    <!-- Foundation -->
+    <line x1="40" y1="600" x2="720" y2="600"/>
+    <line x1="40" y1="700" x2="720" y2="700"/>
+    <line x1="40" y1="600" x2="40" y2="700"/>
+    <line x1="720" y1="600" x2="720" y2="700"/>
+
+    <!-- Foundation hatch -->
+    <rect x="40" y="600" width="680" height="100" fill="url(#hatch)" stroke="none" opacity="0.5"/>
+
+    <!-- Soil line -->
+    <g stroke="rgba(255,255,255,0.4)" stroke-width="0.7">
+      <line x1="-40" y1="710" x2="800" y2="710"/>
+      <line x1="-40" y1="710" x2="-50" y2="725"/>
+      <line x1="-20" y1="710" x2="-30" y2="725"/>
+      <line x1="0" y1="710" x2="-10" y2="725"/>
+      <line x1="20" y1="710" x2="10" y2="725"/>
+      <line x1="40" y1="710" x2="30" y2="725"/>
+      <line x1="780" y1="710" x2="770" y2="725"/>
+      <line x1="800" y1="710" x2="790" y2="725"/>
+    </g>
+
+    <!-- Window -->
+    <rect x="280" y="220" width="200" height="180" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" fill="rgba(255,255,255,0.05)"/>
+    <line x1="380" y1="220" x2="380" y2="400" stroke="rgba(255,255,255,0.85)"/>
+    <line x1="280" y1="310" x2="480" y2="310" stroke="rgba(255,255,255,0.85)"/>
+
+    <!-- Callout labels with leader lines -->
+    <g stroke="rgba(255,255,255,0.45)" stroke-width="0.7" fill="none">
+      <path d="M 380 60 L 600 60 L 720 40"/>
+      <path d="M 400 280 L 580 280 L 700 250"/>
+      <path d="M 380 540 L 580 540 L 700 520"/>
+      <path d="M 380 650 L 580 650 L 700 640"/>
+      <circle cx="380" cy="60" r="3" fill="rgba(255,255,255,0.6)" stroke="none"/>
+      <circle cx="400" cy="280" r="3" fill="rgba(255,255,255,0.6)" stroke="none"/>
+      <circle cx="380" cy="540" r="3" fill="rgba(255,255,255,0.6)" stroke="none"/>
+      <circle cx="380" cy="650" r="3" fill="rgba(255,255,255,0.6)" stroke="none"/>
+    </g>
+    <g fill="rgba(255,255,255,0.55)" font-family="monospace" font-size="12" letter-spacing="1">
+      <text x="730" y="44">ROOF ASSEMBLY</text>
+      <text x="710" y="254">DBL-PANE WINDOW</text>
+      <text x="710" y="524">FLOOR ASSEMBLY</text>
+      <text x="710" y="644">FOUNDATION</text>
+    </g>
+
+    <!-- Vertical dimensions -->
+    <g stroke="rgba(255,255,255,0.35)" stroke-width="0.7" fill="none">
+      <line x1="-100" y1="135" x2="-100" y2="600"/>
+      <line x1="-95" y1="135" x2="-105" y2="135"/>
+      <line x1="-95" y1="600" x2="-105" y2="600"/>
+    </g>
+    <text x="-130" y="380" fill="rgba(255,255,255,0.45)" font-family="monospace" font-size="11" transform="rotate(-90 -130 380)">10'-0" PLATE HT</text>
+  </g>
+</svg>

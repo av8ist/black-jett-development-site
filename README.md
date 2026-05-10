@@ -16,7 +16,7 @@ Static marketing site for **Black Jett Development, LLC**. Hand-built HTML, CSS,
 ├── _redirects                        ← Cloudflare Pages / Netlify
 ├── about/index.html
 ├── spec-homes/index.html
-├── small-multifamily/index.html
+├── multifamily/index.html
 ├── acquisitions/index.html
 ├── contact/index.html
 └── assets/
@@ -24,7 +24,14 @@ Static marketing site for **Black Jett Development, LLC**. Hand-built HTML, CSS,
     ├── js/main.js
     ├── img/
     │   ├── bjd-logo.png
-    │   └── og-image.png              ← 1200×630 social share card
+    │   ├── og-image.png              ← 1200×630 social share card
+    │   └── blueprints/               ← Page-specific blueprint backgrounds
+    │       ├── home.svg              ← Site plan (5 lots, dimensions)
+    │       ├── about.svg             ← Drafting orientation diagram
+    │       ├── spec-homes.svg        ← Single-family floor plan
+    │       ├── multifamily.svg       ← 4-plex floor plan
+    │       ├── acquisitions.svg      ← Topographic parcel survey
+    │       └── contact.svg           ← Wall section detail
     └── fonts/
         ├── fraunces-{400,500,600,700}-{normal,italic}.woff2
         ├── plex-sans-{300,400,500,600,700}.woff2
@@ -36,7 +43,42 @@ URLs are directory-style: `/about/`, `/spec-homes/`, etc. The `_redirects` file 
 
 ---
 
+## Blueprints
+
+Each page hero uses a unique architectural blueprint as its background, defined in `assets/img/blueprints/`. They're hand-coded SVGs so they scale perfectly and stay sharp on any display. The home hero uses `home.svg`; subpages route to their own via `body[data-page="..."]` selectors in CSS.
+
+To swap a blueprint, replace the corresponding `.svg` file in `assets/img/blueprints/` (keep the same filename) — no CSS or HTML changes needed.
+
+To change the per-page mapping, look in `styles.css` under the `.page-head` block — there's a clear list of `body[data-page="..."]` selectors mapping each page to its blueprint.
+
+## Adding photographs
+
+The site is currently photo-free by design — the blueprint backgrounds carry the visual identity, which keeps things consistent and lender-friendly without needing licensed imagery. If you want to add real project photos later, here's the path:
+
+**Free-use sources** (no attribution required, commercial use OK):
+- **Unsplash** (unsplash.com) — best quality. Search "construction site," "modern home," "multifamily building," "residential development."
+- **Pexels** (pexels.com) — solid quality, larger volume.
+- **Pixabay** (pixabay.com) — older library but completely free.
+
+**Recommended placement spots:**
+- Home page, between "Areas of Expertise" and "Development Lens" — a single wide hero image
+- Spec Homes page, after the "Disciplined execution" intro — a 2-column gallery of finished homes
+- Multifamily page, between the intro and "Practical Infrastructure" feature panel — a building exterior shot
+- Acquisitions page, alongside "Identifying value through practical analysis" — an aerial site shot
+
+**Image specs:**
+- Save as `assets/img/photos/<page>-<n>.jpg` (e.g., `home-hero.jpg`, `spec-1.jpg`)
+- Compress to under 200 KB per photo (use squoosh.app or a similar tool)
+- Use 16:9 or 4:3 aspect ratios for hero strips, 1:1 for square cards
+- Always set `width` and `height` attributes in the `<img>` tag to prevent layout shift
+
+**CSP note:** The current Content-Security-Policy is `img-src 'self' data:` — meaning images must be self-hosted, not loaded from external CDNs. Always download the image and store it locally rather than hot-linking.
+
+---
+
 ## Internal docs vs public site
+
+
 
 This `README.md` and the `_headers` / `_redirects` files are deploy-bundle artifacts, not public pages. The `_redirects` file explicitly 404s `/README.md`, `/_headers`, and `/_redirects` so they cannot be fetched from the live site, even though they live alongside `index.html` in the deploy. Cloudflare Pages and Netlify also treat the underscore-prefixed files as platform configuration and don't serve them by default, but the redirect rules are belt-and-suspenders.
 

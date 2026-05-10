@@ -181,7 +181,12 @@ body {
   font-size: 17px;
   line-height: 1.65;
   color: var(--ink);
-  background: var(--bone);
+  background-color: #f3f0e6;
+  background-image:
+    linear-gradient(rgba(27, 79, 138, 0.06) 1px, transparent 1px),
+    linear-gradient(to right, rgba(27, 79, 138, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px;
+  background-position: 0 0, 0 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -287,9 +292,24 @@ p { margin: 0 0 1em; }
 }
 
 .section--bone { background: var(--bone); }
-.section--paper { background: var(--paper); }
-.section--ink { background: var(--ink); color: var(--paper); }
-.section--ink h1, .section--ink h2, .section--ink h3, .section--ink h4 { color: var(--paper); }
+.section--paper {
+  background-color: #f3f0e6;
+  background-image:
+    linear-gradient(rgba(27, 79, 138, 0.05) 1px, transparent 1px),
+    linear-gradient(to right, rgba(27, 79, 138, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px;
+}
+.section--ink {
+  background-color: #fafaf3;
+  background-image:
+    linear-gradient(rgba(27, 79, 138, 0.06) 1px, transparent 1px),
+    linear-gradient(to right, rgba(27, 79, 138, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px, 28px 28px;
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.section--ink h1, .section--ink h2, .section--ink h3, .section--ink h4 { color: var(--ink); }
 
 /* Subtle blueprint grid background — recurring motif tied to the logo */
 .section--blueprint-grid {
@@ -351,12 +371,12 @@ p { margin: 0 0 1em; }
 }
 .brand:hover { opacity: 0.85; }
 .brand img {
-  height: 44px;
+  height: 81px;
   width: auto;
   object-fit: contain;
 }
 @media (min-width: 768px) {
-  .brand img { height: 52px; }
+  .brand img { height: 95px; }
 }
 
 .nav-menu {
@@ -443,7 +463,12 @@ p { margin: 0 0 1em; }
   position: relative;
   padding: var(--space-24) 0 var(--space-20);
   overflow: hidden;
-  background: var(--ink);
+  background-color: #0d3a6b;
+  background-image:
+    linear-gradient(135deg, rgba(8,32,68,0.72) 0%, rgba(13,58,107,0.45) 55%, rgba(13,58,107,0.25) 100%),
+    url("/assets/img/blueprints/home.svg");
+  background-size: cover, cover;
+  background-position: center, center;
   color: var(--bone);
 }
 @media (min-width: 768px) {
@@ -454,13 +479,10 @@ p { margin: 0 0 1em; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse at 70% 30%, black 0%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse at 70% 30%, black 0%, transparent 75%);
+  background:
+    linear-gradient(to right, rgba(13,58,107,0.85) 0%, rgba(13,58,107,0.4) 45%, transparent 80%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero::after {
@@ -470,9 +492,10 @@ p { margin: 0 0 1em; }
   right: -10%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(27,79,138,0.35), transparent 65%);
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 65%);
   pointer-events: none;
   filter: blur(40px);
+  z-index: 1;
 }
 
 .hero-content {
@@ -489,21 +512,21 @@ p { margin: 0 0 1em; }
 .hero h1 em {
   font-style: italic;
   font-weight: 400;
-  color: var(--blueprint-light);
+  color: #b8d4f5;
 }
 
 .hero-lede {
   font-size: 1.15rem;
   line-height: 1.65;
-  color: rgba(247, 244, 237, 0.78);
+  color: rgba(247, 244, 237, 0.85);
   margin-bottom: var(--space-10);
   max-width: 620px;
 }
 
 .hero-eyebrow {
-  color: var(--blueprint-light);
+  color: #b8d4f5;
 }
-.hero-eyebrow::before { background: var(--blueprint-light); }
+.hero-eyebrow::before { background: #b8d4f5; }
 
 .hero-actions {
   display: flex;
@@ -784,23 +807,31 @@ p { margin: 0 0 1em; }
 
 /* ------- Page header (interior pages) ----------------------- */
 .page-head {
-  background: var(--ink);
+  background-color: #0d3a6b;
   color: var(--bone);
   padding: var(--space-20) 0 var(--space-16);
   position: relative;
   overflow: hidden;
+  background-image:
+    linear-gradient(135deg, rgba(8,32,68,0.78) 0%, rgba(13,58,107,0.52) 55%, rgba(13,58,107,0.32) 100%),
+    url("/assets/img/blueprints/about.svg");
+  background-size: cover, cover;
+  background-position: center, center;
 }
+/* Page-specific blueprints */
+body[data-page="about"] .page-head        { background-image: linear-gradient(135deg, rgba(8,32,68,0.78) 0%, rgba(13,58,107,0.52) 55%, rgba(13,58,107,0.32) 100%), url("/assets/img/blueprints/about.svg"); }
+body[data-page="spec-homes"] .page-head   { background-image: linear-gradient(135deg, rgba(8,32,68,0.78) 0%, rgba(13,58,107,0.52) 55%, rgba(13,58,107,0.32) 100%), url("/assets/img/blueprints/spec-homes.svg"); }
+body[data-page="multifamily"] .page-head  { background-image: linear-gradient(135deg, rgba(8,32,68,0.78) 0%, rgba(13,58,107,0.52) 55%, rgba(13,58,107,0.32) 100%), url("/assets/img/blueprints/multifamily.svg"); }
+body[data-page="acquisitions"] .page-head { background-image: linear-gradient(135deg, rgba(8,32,68,0.78) 0%, rgba(13,58,107,0.52) 55%, rgba(13,58,107,0.32) 100%), url("/assets/img/blueprints/acquisitions.svg"); }
+body[data-page="contact"] .page-head      { background-image: linear-gradient(135deg, rgba(8,32,68,0.78) 0%, rgba(13,58,107,0.52) 55%, rgba(13,58,107,0.32) 100%), url("/assets/img/blueprints/contact.svg"); }
+
 .page-head::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+  background: linear-gradient(to right, rgba(13,58,107,0.65) 0%, rgba(13,58,107,0.25) 60%, transparent 100%);
   pointer-events: none;
+  z-index: 1;
 }
 .page-head .container { position: relative; z-index: 2; }
 .page-head .crumb {
@@ -808,10 +839,10 @@ p { margin: 0 0 1em; }
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(247, 244, 237, 0.5);
+  color: rgba(247, 244, 237, 0.65);
   margin-bottom: var(--space-5);
 }
-.page-head .crumb a { color: rgba(247, 244, 237, 0.5); }
+.page-head .crumb a { color: rgba(247, 244, 237, 0.65); }
 .page-head .crumb a:hover { color: var(--paper); }
 .page-head h1 {
   color: var(--paper);
@@ -820,11 +851,11 @@ p { margin: 0 0 1em; }
 }
 .page-head h1 em {
   font-style: italic;
-  color: var(--blueprint-light);
+  color: #b8d4f5;
   font-weight: 400;
 }
 .page-head .deck {
-  color: rgba(247, 244, 237, 0.7);
+  color: rgba(247, 244, 237, 0.85);
   font-size: 1.15rem;
   margin-top: var(--space-5);
   max-width: 640px;
@@ -874,19 +905,21 @@ p { margin: 0 0 1em; }
 
 /* ------- Feature panel (Multifamily darker block) ----------- */
 .feature-panel {
-  background: var(--ink);
-  color: var(--bone);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(2px);
+  color: var(--ink);
   padding: var(--space-10);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 0 rgba(15, 22, 41, 0.04), 0 8px 24px -12px rgba(15, 22, 41, 0.08);
   position: relative;
 }
 .feature-panel + .feature-panel { margin-top: var(--space-6); }
 .feature-panel h4 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.5rem;
-  color: var(--paper);
+  color: var(--ink);
   margin-bottom: var(--space-2);
   display: flex;
   align-items: center;
@@ -895,10 +928,10 @@ p { margin: 0 0 1em; }
 .feature-panel h4 .icon {
   width: 28px;
   height: 28px;
-  color: var(--blueprint-light);
+  color: var(--blueprint);
 }
 .feature-panel > p {
-  color: rgba(247,244,237,0.7);
+  color: var(--slate);
   font-size: 1rem;
   margin-bottom: var(--space-8);
   max-width: 56ch;
@@ -915,25 +948,25 @@ p { margin: 0 0 1em; }
 @media (min-width: 1100px) { .feature-list { grid-template-columns: repeat(3, 1fr); } }
 .feature-list li {
   padding-top: var(--space-5);
-  border-top: 1px solid rgba(247, 244, 237, 0.1);
+  border-top: 1px solid var(--line);
 }
 .feature-list .icon {
   width: 22px;
   height: 22px;
-  color: var(--blueprint-light);
+  color: var(--blueprint);
   margin-bottom: var(--space-4);
 }
 .feature-list h5 {
   margin: 0 0 0.5rem;
   font-family: var(--font-body);
   font-size: 1rem;
-  font-weight: 500;
-  color: var(--paper);
+  font-weight: 600;
+  color: var(--ink);
 }
 .feature-list p {
   margin: 0;
   font-size: 0.9rem;
-  color: rgba(247, 244, 237, 0.6);
+  color: var(--slate);
   line-height: 1.6;
 }
 

@@ -14,6 +14,8 @@
 # Canonicalize legacy flat URLs → directory-style (301 permanent).
 # Only relevant if anything ever linked to the old paths externally.
 /about.html              /about/                 301
+/small-multifamily/      /multifamily/           301
+/small-multifamily/*     /multifamily/:splat     301
 /spec-homes.html         /spec-homes/            301
 /small-multifamily.html  /small-multifamily/     301
 /acquisitions.html       /acquisitions/          301
