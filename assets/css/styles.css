@@ -1115,14 +1115,24 @@ body[data-page="contact"] .page-head      { background-image: linear-gradient(13
 .info-block a { color: var(--paper); border-bottom: 1px solid rgba(247,244,237,0.3); transition: all var(--duration) var(--ease); }
 .info-block a:hover { color: var(--blueprint-light); border-bottom-color: var(--blueprint-light); }
 
+/* Email block — prominent treatment */
+.info-block--email .email-prominent {
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.info-block--email .email-prominent a {
+  color: var(--paper);
+  border-bottom-width: 1px;
+}
+
 .contact-paths {
   padding: var(--space-12) var(--space-10);
   background: var(--paper);
-}
-.contact-paths h3 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  margin-bottom: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .path-link {
   display: block;
@@ -1140,16 +1150,17 @@ body[data-page="contact"] .page-head      { background-image: linear-gradient(13
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.4rem;
+  margin: 0;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 1.05rem;
   font-weight: 500;
 }
+.path-link--simple h4 { margin: 0; }
 .path-link h4 svg { width: 18px; height: 18px; color: var(--slate-light); transition: all var(--duration) var(--ease); }
 .path-link:hover h4 { color: var(--blueprint); }
 .path-link:hover h4 svg { color: var(--blueprint); transform: translateX(4px); }
-.path-link p { margin: 0; font-size: 0.9rem; color: var(--slate); }
+.path-link p { margin: 0.4rem 0 0; font-size: 0.9rem; color: var(--slate); }
 
 /* ------- Footer --------------------------------------------- */
 .site-footer {
